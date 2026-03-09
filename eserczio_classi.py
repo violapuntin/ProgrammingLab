@@ -43,7 +43,7 @@ class Veicolo():
         return self.speed
 '''
 #ESERCIZIO 3
-
+'''
 class CSVFile():
 
     def __init__(self, name):
@@ -65,4 +65,22 @@ class CSVFile():
         file.close()
         
         return data
+'''
+#ESERCIZIO 4
+class Canguro():
+
+    def __init__(self, contenuto_tasca=[]):  #Mai mettere oggetti che puntano alla stessa lista
+        self.contenuto_tasca = contenuto_tasca
+        
+    def intasca(self, obj):
+        self.contenuto_tasca.append(obj)
+    
+    def __str__(self):
+        return f'Contenuto tasca: {self.contenuto_tasca}'
+
+can = Canguro()
+guro = Canguro()
+can.intasca('wallet')
+print(can)  #stampa wallet
+print(guro) #stampa wallet
 
