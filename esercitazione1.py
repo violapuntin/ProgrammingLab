@@ -16,8 +16,8 @@ class MovingAverage():
         if not isinstance(data, list):
             raise ExamException('Errore, non è stata inserita una lista')
         for elem in data:
-            if not isinstance(elem, int):
-                raise ExamException(f"Errore, l'elemento {elem} non è un intero")
+            if not isinstance(elem, (int,float)):
+                raise ExamException(f"Errore, l'elemento {elem} non è valido")
         
         if len(data) < self.window_len:
             raise ExamException('Errore, la lunghezza della lista è minore della lunghezza della finestra')

@@ -14,16 +14,19 @@ class CSVTimeSeriesFile:
             raise ExamException("Errore apertura file")
         
         righe = file.readlines()
+        # per partire dalla secondsa riga righe = file.readlines()[1:]
         data = []
 
         for riga in righe:
             if riga.startswith("date"):
                 continue
+        #next(file)
         
             elementi = riga.strip().split(",")
 
             if len(elementi) < 2:
                 continue
+            
 
             date = elementi[0]
             passengers = elementi[1]
